@@ -17,11 +17,8 @@ const ROOT = resolve(import.meta.dirname, "..");
 const PRIMITIVES_DIR = join(ROOT, "src", "ui", "primitives");
 const OUTPUT_FILE = join(ROOT, ".cursorrules");
 
-const config = JSON.parse(
-  readFileSync(join(ROOT, "ds.config.json"), "utf-8"),
-);
-const DS_TITLE = `${config.name} (${config.shortName})`;
-const DS_PACKAGE = `${config.scope}/${config.packageName}`;
+const DS_TITLE = "Simple Design System (SDS)";
+const DS_PACKAGE = "@simple-ds/components";
 
 // ── helpers ────────────────────────────────────────────────────────────────
 
@@ -230,7 +227,7 @@ function generateCursorRules(analyses) {
     "  Пример: `import { Button, Input } from \"primitives\";`",
   );
   lines.push(
-    `- **НЕ** импортируй напрямую из \`react-aria-components\`, \`@react-aria/*\` или \`@react-stately/*\` — используй обёртки ${config.shortName}.`,
+    `- **НЕ** импортируй напрямую из \`react-aria-components\`, \`@react-aria/*\` или \`@react-stately/*\` — используй обёртки SDS.`,
   );
   lines.push(
     "- Используй **TypeScript** для типизации всех компонентов и пропсов.",
