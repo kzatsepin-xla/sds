@@ -1,6 +1,6 @@
-# @your-org/design-system
+# @simple-ds/components
 
-React component library with auto-generated Cursor AI rules
+Simple Design System - React components with auto-generated Cursor rules
 
 ## Quick Start (for forks)
 
@@ -30,7 +30,7 @@ npm run setup
 ## Installation
 
 ```bash
-npm install @your-org/design-system
+npm install @simple-ds/components
 ```
 
 ### GitHub Packages Authentication
@@ -38,7 +38,7 @@ npm install @your-org/design-system
 Create `.npmrc` in your project root:
 
 ```
-@your-org:registry=https://npm.pkg.github.com
+@simple-ds:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 ```
 
@@ -47,7 +47,7 @@ Get your token at: https://github.com/settings/tokens (needs `read:packages` sco
 ## Usage
 
 ```tsx
-import { Button, Input, Dialog } from "@your-org/design-system/ui/primitives";
+import { Button, Input, Dialog } from "@simple-ds/components/ui/primitives";
 
 function App() {
   return (
@@ -66,7 +66,7 @@ The package includes an auto-generated `.cursorrules` file for Cursor AI.
 After installation, sync it to your project:
 
 ```bash
-cp node_modules/@your-org/design-system/.cursorrules .
+cp node_modules/@simple-ds/components/.cursorrules .
 ```
 
 Or add to your consumer `package.json`:
@@ -74,7 +74,7 @@ Or add to your consumer `package.json`:
 ```json
 {
   "scripts": {
-    "sync:cursorrules": "cp node_modules/@your-org/design-system/.cursorrules .",
+    "sync:cursorrules": "cp node_modules/@simple-ds/components/.cursorrules .",
     "postinstall": "npm run sync:cursorrules"
   }
 }
@@ -84,7 +84,7 @@ Now Cursor AI will know about all available components!
 
 ## Documentation
 
-See [Storybook](https://your-github-username.github.io/sds/storybook) for live component examples.
+See [Storybook](https://kzatsepin-xla.github.io/sds/storybook) for live component examples.
 
 Browse stories locally:
 

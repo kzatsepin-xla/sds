@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/design-system",
+  "name": "@simple-ds/components",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -19,6 +19,7 @@
     "setup": "node scripts/setup-package.js",
     "postsetup": "npm run generate:cursorrules",
     "prepublishOnly": "npm run generate:cursorrules",
+    "prepare": "npm run generate:cursorrules",
     "version:patch": "npm version patch -m \"chore: bump version to %s\"",
     "version:minor": "npm version minor -m \"chore: bump version to %s\"",
     "version:major": "npm version major -m \"chore: bump version to %s\""
@@ -58,21 +59,22 @@
     "typescript": "^5.0.2",
     "vite": "^6.3.5"
   },
-  "description": "React component library with auto-generated Cursor AI rules",
+  "description": "Simple Design System - React components with auto-generated Cursor rules",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-github-username/sds.git"
+    "url": "git+https://github.com/kzatsepin-xla/sds.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "@your-org:registry": "https://npm.pkg.github.com"
+    "@simple-ds:registry": "https://npm.pkg.github.com"
   },
   "files": [
+    "ui/",
     "src/",
-    "dist/",
     ".cursorrules",
     "vite.config.ts",
     "tsconfig.json",
+    "package.json",
     "README.md"
   ],
   "exports": {
