@@ -3,26 +3,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "app:dev": "vite",
-    "app:build": "tsc && vite build",
-    "app:lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "app:preview": "vite preview",
-    "storybook": "storybook dev -p 6006 --no-open",
-    "storybook:build": "storybook build --output-dir dist/storybook",
-    "build": "npm run app:build; npm run storybook:build",
-    "script:dev-resources": "cd scripts/dev-resources; node --env-file=../../.env app.mjs; cd -;",
-    "script:icons": "cd scripts/icons; node --env-file=../../.env app.mjs --skip-rest-api; cd -;",
-    "script:icons:rest": "cd scripts/icons; node --env-file=../../.env app.mjs; cd -;",
-    "script:tokens": "cd scripts/tokens; node --env-file=../../.env app.mjs --skip-rest-api; cd -;",
-    "script:tokens:rest": "cd scripts/tokens; node --env-file=../../.env app.mjs; cd -;",
     "generate:cursorrules": "node scripts/generate-cursorrules.js",
-    "setup": "node scripts/setup-package.js",
-    "postsetup": "npm run generate:cursorrules",
-    "prepublishOnly": "npm run generate:cursorrules",
-    "prepare": "npm run generate:cursorrules",
-    "version:patch": "npm version patch -m \"chore: bump version to %s\"",
-    "version:minor": "npm version minor -m \"chore: bump version to %s\"",
-    "version:major": "npm version major -m \"chore: bump version to %s\""
+    "prepublishOnly": "npm run generate:cursorrules"
   },
   "prettier": {
     "plugins": [
@@ -73,15 +55,10 @@
     "src/",
     ".cursorrules",
     "vite.config.ts",
-    "tsconfig.json",
-    "package.json",
-    "README.md"
+    "tsconfig.json"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./ui/primitives/*": "./src/ui/primitives/*/index.tsx",
+    "./ui/primitives/*": "./ui/primitives/*/index.tsx",
     "./.cursorrules": "./.cursorrules"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+  }
 }
