@@ -44,15 +44,12 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: ${{ steps.config.outputs.scope }}
 
-      # ── Install & build ────────────────────────────────────────────────
+      # ── Install & generate ─────────────────────────────────────────────
       - name: Install dependencies
         run: npm ci
 
       - name: Generate .cursorrules
         run: npm run generate:cursorrules
-
-      - name: Build
-        run: npm run app:build
 
       # ── Version bump ───────────────────────────────────────────────────
       - name: Configure Git
