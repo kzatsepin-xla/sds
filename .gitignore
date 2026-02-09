@@ -26,3 +26,6 @@ ds.config.local.json
 *.sln
 *.sw?
 *storybook.log
+
+# Generated files
+.cursorrules

@@ -1,165 +1,48 @@
 # @simple-ds/components
 
-Simple Design System - React components with auto-generated Cursor rules
+Simple Design System — React components with Figma Code Connect and auto-generated Cursor rules.
 
-## Quick Start (for forks)
+## What's included
 
-1. Fork this repository
-2. Edit `ds.config.json`:
+- **`src/`** — React component source files (TSX + CSS)
+- **`figma.config.json`** — Figma Code Connect configuration
+- **`.cursorrules`** — Auto-generated coding guidelines for Cursor AI (created at publish time)
 
-```json
-{
-  "scope": "@your-github-username",
-  "packageName": "design-system",
-  "repository": {
-    "owner": "your-github-username",
-    "repo": "sds"
-  }
-}
-```
-
-3. Run setup:
+## Install
 
 ```bash
-npm run setup
+npm install @simple-ds/components --registry=https://npm.pkg.github.com
 ```
 
-4. Commit and push to main branch
-5. GitHub Actions will auto-publish to GitHub Packages
+Or add to `.npmrc`:
 
-## Installation
+```
+@simple-ds:registry=https://npm.pkg.github.com
+```
+
+Then:
 
 ```bash
 npm install @simple-ds/components
 ```
 
-### GitHub Packages Authentication
-
-Create `.npmrc` in your project root:
-
-```
-@simple-ds:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
-```
-
-Get your token at: https://github.com/settings/tokens (needs `read:packages` scope)
-
 ## Usage
 
-```tsx
-import { Button, Input, Dialog } from "@simple-ds/components/ui/primitives";
+Import components directly from source:
 
-function App() {
-  return (
-    <>
-      <Button variant="primary">Click me</Button>
-      <Input placeholder="Type here..." />
-    </>
-  );
-}
+```tsx
+import { Button } from '@simple-ds/components/src/Button/Button';
+import { Input } from '@simple-ds/components/src/Input/Input';
 ```
 
 ## Cursor AI Integration
 
-The package includes an auto-generated `.cursorrules` file for Cursor AI.
+The package includes auto-generated `.cursorrules` with component documentation. After installing, Cursor AI will automatically pick up the rules and use them when suggesting code.
 
-After installation, sync it to your project:
+## Figma Code Connect
 
-```bash
-cp node_modules/@simple-ds/components/.cursorrules .
-```
-
-Or add to your consumer `package.json`:
-
-```json
-{
-  "scripts": {
-    "sync:cursorrules": "cp node_modules/@simple-ds/components/.cursorrules .",
-    "postinstall": "npm run sync:cursorrules"
-  }
-}
-```
-
-Now Cursor AI will know about all available components!
-
-## Documentation
-
-See [Storybook](https://kzatsepin-xla.github.io/sds/storybook) for live component examples.
-
-Browse stories locally:
-
-```bash
-npm run storybook
-```
-
-## Development
-
-```bash
-npm install                     # Install dependencies
-npm run app:dev                 # Dev server at localhost:8000
-npm run storybook               # Storybook at localhost:6006
-npm run generate:cursorrules    # Regenerate .cursorrules
-npm run setup                   # Re-apply ds.config.json to all files
-```
-
-### Versioning
-
-```bash
-npm run version:patch           # 0.0.1 -> 0.0.2
-npm run version:minor           # 0.1.0 -> 0.2.0
-npm run version:major           # 1.0.0 -> 2.0.0
-```
-
-Push to `main` triggers auto-publish via GitHub Actions.
-
-## Structure
-
-All components and styles live in [src/ui](./src/ui):
-
-| Directory | Description |
-| --- | --- |
-| `src/ui/primitives/` | Atomic components (Button, Input, Dialog, etc.) |
-| `src/ui/compositions/` | Complex composed patterns (Cards, Forms, Headers) |
-| `src/ui/layout/` | Layout primitives (Flex, Section, Grid) |
-| `src/ui/icons/` | SVG icon components |
-| `src/ui/hooks/` | Custom React hooks (useMediaQuery) |
-| `src/ui/utils/` | Utility components and functions |
-
-### Import aliases
-
-Configured in `vite.config.ts` and `tsconfig.json`:
-
-```tsx
-import { Button, Input } from "primitives";
-import { Flex, Section } from "layout";
-import { IconCheck } from "icons";
-import { useMediaQuery } from "hooks";
-```
-
-## Figma Integration
-
-Fully backed by [Figma Code Connect](https://github.com/figma/code-connect).
-See [src/figma/](./src/figma) for all Code Connect mappings.
-
-### Figma Auth
-
-1. [Create a Figma API token](https://www.figma.com/developers/api#authentication) with Code Connect, File Read, Dev Resources Write, and Variables scopes
-2. Copy `.env-rename` to `.env`
-3. Set `FIGMA_ACCESS_TOKEN` and `FIGMA_FILE_KEY`
-
-### Scripts
-
-| Command | Description |
-| --- | --- |
-| `npm run script:tokens:rest` | Sync design tokens from Figma |
-| `npm run script:icons:rest` | Sync icons from Figma |
-| `npm run script:dev-resources` | Update dev resources |
-
-## Configuration
-
-Edit `ds.config.json` to customise the package name, scope, and metadata.
-Then run `npm run setup` to apply changes to package.json, .npmrc, and README.
+`figma.config.json` maps Figma components to source code, enabling seamless design-to-code workflow.
 
 ## License
 
-MIT
+See [LICENSE](./LICENSE) for details.
