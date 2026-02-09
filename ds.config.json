@@ -1,0 +1,11 @@
+{
+  "name": "Simple Design System",
+  "shortName": "SDS",
+  "scope": "@your-org",
+  "packageName": "design-system",
+  "description": "React component library with auto-generated Cursor AI rules",
+  "repository": {
+    "owner": "your-github-username",
+    "repo": "sds"
+  }
+}

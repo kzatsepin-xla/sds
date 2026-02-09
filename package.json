@@ -1,6 +1,5 @@
 {
-  "name": "sds",
-  "private": true,
+  "name": "@your-org/design-system",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -15,7 +14,14 @@
     "script:icons": "cd scripts/icons; node --env-file=../../.env app.mjs --skip-rest-api; cd -;",
     "script:icons:rest": "cd scripts/icons; node --env-file=../../.env app.mjs; cd -;",
     "script:tokens": "cd scripts/tokens; node --env-file=../../.env app.mjs --skip-rest-api; cd -;",
-    "script:tokens:rest": "cd scripts/tokens; node --env-file=../../.env app.mjs; cd -;"
+    "script:tokens:rest": "cd scripts/tokens; node --env-file=../../.env app.mjs; cd -;",
+    "generate:cursorrules": "node scripts/generate-cursorrules.js",
+    "setup": "node scripts/setup-package.js",
+    "postsetup": "npm run generate:cursorrules",
+    "prepublishOnly": "npm run generate:cursorrules",
+    "version:patch": "npm version patch -m \"chore: bump version to %s\"",
+    "version:minor": "npm version minor -m \"chore: bump version to %s\"",
+    "version:major": "npm version major -m \"chore: bump version to %s\""
   },
   "prettier": {
     "plugins": [
@@ -51,5 +57,29 @@
     "storybook": "^8.6.12",
     "typescript": "^5.0.2",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "React component library with auto-generated Cursor AI rules",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-github-username/sds.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "@your-org:registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "src/",
+    "dist/",
+    ".cursorrules",
+    "vite.config.ts",
+    "tsconfig.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./ui/primitives/*": "./src/ui/primitives/*/index.tsx",
+    "./.cursorrules": "./.cursorrules"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
 }
