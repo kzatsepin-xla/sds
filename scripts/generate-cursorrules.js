@@ -18,7 +18,7 @@ const PRIMITIVES_DIR = join(ROOT, "src", "ui", "primitives");
 const OUTPUT_FILE = join(ROOT, ".cursorrules");
 
 const DS_TITLE = "Simple Design System (SDS)";
-const DS_PACKAGE = "@simple-ds/components";
+const DS_PACKAGE = "@kzatsepin-xla/components";
 
 // ── helpers ────────────────────────────────────────────────────────────────
 

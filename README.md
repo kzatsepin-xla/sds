@@ -1,4 +1,4 @@
-# @simple-ds/components
+# @kzatsepin-xla/components
 
 Simple Design System — React components with Figma Code Connect and auto-generated Cursor rules.
 
@@ -11,19 +11,19 @@ Simple Design System — React components with Figma Code Connect and auto-gener
 ## Install
 
 ```bash
-npm install @simple-ds/components --registry=https://npm.pkg.github.com
+npm install @kzatsepin-xla/components --registry=https://npm.pkg.github.com
 ```
 
 Or add to `.npmrc`:
 
 ```
-@simple-ds:registry=https://npm.pkg.github.com
+@kzatsepin-xla:registry=https://npm.pkg.github.com
 ```
 
 Then:
 
 ```bash
-npm install @simple-ds/components
+npm install @kzatsepin-xla/components
 ```
 
 ## Usage
@@ -31,8 +31,8 @@ npm install @simple-ds/components
 Import components directly from source:
 
 ```tsx
-import { Button } from '@simple-ds/components/src/Button/Button';
-import { Input } from '@simple-ds/components/src/Input/Input';
+import { Button } from '@kzatsepin-xla/components/src/Button/Button';
+import { Input } from '@kzatsepin-xla/components/src/Input/Input';
 ```
 
 ## Cursor AI Integration

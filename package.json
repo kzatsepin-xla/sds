@@ -1,5 +1,5 @@
 {
-  "name": "@simple-ds/components",
+  "name": "@kzatsepin-xla/components",
   "version": "1.0.0",
   "description": "Simple Design System - React components with auto-generated Cursor rules",
   "type": "module",
@@ -9,7 +9,7 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "@simple-ds:registry": "https://npm.pkg.github.com"
+    "@kzatsepin-xla:registry": "https://npm.pkg.github.com"
   },
   "files": [
     "src/",

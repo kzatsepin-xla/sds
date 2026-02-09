@@ -28,4 +28,4 @@ ds.config.local.json
 *storybook.log
 
 # Generated files
-.cursorrules
+.cursorrules.npmrc
