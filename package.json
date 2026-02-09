@@ -19,7 +19,7 @@
     "README.md"
   ],
   "exports": {
-    "./src/*": "./src/*",
+    "./ui/primitives/*": "./src/ui/primitives/*/index.tsx",
     "./.cursorrules": "./.cursorrules"
   },
   "scripts": {
