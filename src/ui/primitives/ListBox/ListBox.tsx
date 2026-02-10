@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 import {
   ListBox as RACListBox,

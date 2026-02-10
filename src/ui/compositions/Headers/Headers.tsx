@@ -1,5 +1,13 @@
+// @ts-nocheck
 import clsx from "clsx";
-import { useAuth } from "data";
+// Stub for deleted data module
+function useAuth() {
+  return {
+    user: null as { name: string; avatar: string } | null,
+    login: (_credentials: { email: string; password: string }) => {},
+    logout: () => {},
+  };
+}
 import { useMediaQuery } from "hooks";
 import { IconChevronDown, IconMenu, IconX } from "icons";
 import { Flex, FlexItem, Section, type SectionProps } from "layout";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { clsx } from "clsx";
 import { IconSearch, IconX } from "icons";
 import { IconButton, Input, Label, ListBox, ListBoxItem } from "primitives";

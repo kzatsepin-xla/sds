@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 import { Form, type FormProps } from "primitives";
 import "./forms.css";

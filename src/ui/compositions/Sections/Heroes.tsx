@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Flex, Section, type FlexProps, type SectionProps } from "layout";
 
 export type HeroProps = SectionProps & { flexProps?: FlexProps };

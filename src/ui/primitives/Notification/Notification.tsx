@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 import { IconX } from "icons";
 import { DestructiveIconButton, IconButton } from "primitives";

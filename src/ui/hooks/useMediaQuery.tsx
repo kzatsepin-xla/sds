@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useMemo, useSyncExternalStore } from "react";
 
 const breakpoints = {

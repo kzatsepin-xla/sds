@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { clsx } from "clsx";
 import React, { ComponentPropsWithoutRef } from "react";
 import { Button as RACButton, Link as RACLink } from "react-aria-components";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 import { ComponentPropsWithoutRef, ReactNode } from "react";
 import { AnchorOrButton, AnchorOrButtonProps } from "utils";

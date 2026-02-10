@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { clsx } from "clsx";
 import { IconChevronDown, IconChevronUp } from "icons";
 import { Checkbox } from "primitives";

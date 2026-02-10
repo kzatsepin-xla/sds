@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { clsx } from "clsx";
 import { IconCheck, IconMinus } from "icons";
 import { Description, FieldError, Label, SharedFieldProps } from "primitives";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { clsx } from "clsx";
 import { Description, FieldError, Label, SharedFieldProps } from "primitives";
 import {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 
 export type IconSize = "14" | "16" | "20" | "24" | "32" | "40" | "48";

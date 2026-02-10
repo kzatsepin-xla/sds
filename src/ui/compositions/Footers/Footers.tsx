@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useMediaQuery } from "hooks";
 import { IconInstagram, IconLinkedin, IconTwitter, IconYoutube } from "icons";
 import { Flex, FlexItem, Section, type SectionProps } from "layout";

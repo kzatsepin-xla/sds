@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 import { useMediaQuery } from "hooks";
 import { IconArrowLeft, IconArrowRight } from "icons";

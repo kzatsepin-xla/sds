@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'scripts/**'
       - 'package.json'
+      - 'tsup.config.ts'
   workflow_dispatch:
 
 permissions:
@@ -31,8 +32,14 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kzatsepin-xla'
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Generate .cursorrules
-        run: node scripts/generate-cursorrules.js
+        run: npm run generate:cursorrules
+
+      - name: Build
+        run: npm run build
 
       - name: Configure Git
         run: |
@@ -45,6 +52,6 @@ jobs:
           git push --follow-tags
 
       - name: Publish to GitHub Packages
-        run: npm publish
+        run: npm publish --no-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

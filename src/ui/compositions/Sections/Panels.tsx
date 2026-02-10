@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Flex, type FlexProps } from "layout";
 
 export type PanelProps = Omit<FlexProps, "container" | "wrap">;

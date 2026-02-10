@@ -1,34 +1,56 @@
 {
   "name": "@kzatsepin-xla/components",
-  "version": "1.0.0",
-  "description": "Simple Design System - React components with auto-generated Cursor rules",
+  "version": "2.0.0",
+  "description": "SDS - Simple Design System for rapid prototyping",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kzatsepin-xla/sds.git"
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ui/primitives/*": {
+      "types": "./dist/ui/primitives/*/index.d.ts",
+      "import": "./dist/ui/primitives/*/index.js"
+    },
+    "./styles.css": "./dist/index.css",
+    "./.cursorrules": "./.cursorrules"
+  },
+  "files": [
+    "dist/",
+    ".cursorrules",
+    "figma.config.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "generate:cursorrules": "node scripts/generate-cursorrules.js",
+    "prebuild": "node scripts/generate-index.js",
+    "prepublishOnly": "npm run generate:cursorrules && npm run build"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "@kzatsepin-xla:registry": "https://npm.pkg.github.com"
   },
-  "files": [
-    "src/",
-    ".cursorrules",
-    "figma.config.json",
-    "LICENSE",
-    "README.md"
-  ],
-  "exports": {
-    "./ui/primitives/*": "./src/ui/primitives/*/index.tsx",
-    "./.cursorrules": "./.cursorrules"
-  },
-  "scripts": {
-    "generate:cursorrules": "node scripts/generate-cursorrules.js",
-    "prepublishOnly": "npm run generate:cursorrules"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kzatsepin-xla/sds.git"
   },
   "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "react-aria-components": "^1.0.0",
+    "clsx": "^2.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-aria-components": "^1.0.0"
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
   }
 }
