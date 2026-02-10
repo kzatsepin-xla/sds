@@ -12,6 +12,9 @@ for (const file of cssFiles) {
   if (existsSync(path)) {
     combined += `/* ${file} */\n`
     combined += readFileSync(path, 'utf-8')
+      .split('\n')
+      .filter(line => !line.trimStart().startsWith('@import'))
+      .join('\n')
     combined += '\n\n'
   }
 }
