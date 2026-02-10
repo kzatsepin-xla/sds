@@ -48,7 +48,7 @@ jobs:
 
       - name: Bump version
         run: |
-          npm version patch -m "chore: bump to %s [skip ci]"
+          npm version patch --force -m "chore: bump to %s [skip ci]"
           git push --follow-tags
 
       - name: Publish to GitHub Packages
