@@ -83,6 +83,31 @@ const cursorrules = `SDS - Simple Design System
 This project uses the SDS component library (${packageName}).
 Always import components from this package - never create custom versions of existing components.
 
+## STRICT SDS MODE — обязательные правила генерации
+
+### ЗАПРЕЩЕНО
+- inline style prop (style={{ ... }}) на любых элементах
+- кастомные CSS переменные начинающиеся с --sds-* в пользовательском коде
+- переопределение body font-family / color / background в globals.css или любом другом CSS
+- теги <style> с переопределениями темы или токенов
+- создание собственных CSS классов для визуальных свойств (цвета, бордеры, радиусы, тени, шрифты)
+- прямое использование HEX/RGB/HSL значений цветов вместо SDS токенов
+
+### ОБЯЗАТЕЛЬНО
+- только SDS примитивы для контролов и типографики: import из ${packageName}/ui/primitives/*
+- управление внешним видом только через props компонентов: variant, size, scheme, className
+- import '${packageName}/styles.css' только один раз в корневом layout.tsx
+- для layout использовать только Tailwind utility классы: flex, grid, gap, p-*, m-*, w-*, h-*, max-w-*, items-*, justify-*
+- темная тема только через классы .sds-light / .sds-dark на контейнере, без ручных переопределений токенов
+
+### ШАБЛОН СТРАНИЦЫ
+При генерации новой страницы используй такую структуру:
+- layout: Tailwind flex/grid утилиты
+- контролы: SDS примитивы с props (variant/size/scheme)
+- типографика: компонент Text из SDS
+- отступы/размеры: Tailwind утилиты
+- цвета/бордеры/радиусы/тени: НЕ задавать, они приходят из SDS темы
+
 Import pattern:
 
   // Individual component (tree-shakeable):
