@@ -24,7 +24,8 @@
     "figma.config.json"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && npm run copy:css",
+    "copy:css": "node scripts/copy-css.js",
     "generate:cursorrules": "node scripts/generate-cursorrules.js",
     "prebuild": "node scripts/generate-index.js",
     "prepublishOnly": "npm run generate:cursorrules && npm run build"
